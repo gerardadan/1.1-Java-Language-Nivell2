@@ -3,29 +3,37 @@
 public class Main {
     public static void main(String[] args) {
 
-        Cotxe.model = "Leon";
+        Car.setModel("Leon");
         //Cotxe.potencia = 120;
         //Cotxe.marca = "Test";
         System.out.println("Class cotxe:");
-        System.out.println("Marca -> " + Cotxe.marca);
-        System.out.println("Model -> " + Cotxe.model);
+        System.out.println("Marca -> " + Car.getMarca());
+        System.out.println("Model -> " + Car.getModel());
         //System.out.println("Potencia -> " + Cotxe.potencia);
-        System.out.println();
-        Cotxe.frenar();
+        System.out.println(Car.curb());
 
-        Cotxe cotxe1 = new Cotxe("panda", 70);
+        Car cotxe1 = new Car("panda", 70);
         System.out.println("Instance of class cotxe1");
-        cotxe1.getCarAttributes();
-        cotxe1.accelerar();
+        getCarAttributes(cotxe1);
+        System.out.println(cotxe1.accelerate());
 
-        Cotxe cotxe2 = new Cotxe("ibiza", 100);
+        Car cotxe2 = new Car("ibiza", 100);
         System.out.println("Instance of class cotxe1");
-        cotxe2.getCarAttributes();
+        getCarAttributes(cotxe2);
 
         System.out.println("Instance of class cotxe1");
-        cotxe1.getCarAttributes();
+        getCarAttributes(cotxe1);
 
         System.out.println("Instance of class cotxe2");
-        cotxe2.getCarAttributes();
+        getCarAttributes(cotxe2);
+
+
+    }
+
+    public static void getCarAttributes(Car cotxe) {
+        System.out.println("Marca -> " + cotxe.getMarca());
+        System.out.println("Model -> " + cotxe.getModel());
+        System.out.println("Potencia -> " + cotxe.getPotencia());
+        System.out.println();
     }
 }
